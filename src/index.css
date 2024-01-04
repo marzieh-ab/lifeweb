@@ -1,0 +1,32 @@
+@font-face {
+  font-family: IRANSans;
+  src: url("../src/assets/fonts/IRANSans/IRANSans.ttf");
+}
+
+@font-face {
+  font-family: IRANSansNum;
+  src: url("../src/assets/fonts/IRANSansNum/IRANSans(FaNum).ttf");
+}
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family: IRANSans;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.custom-header {
+  background-color: blue !important;
+}
