@@ -4,11 +4,13 @@ import Login from "./Login";
 import Tag from "./Tag";
 import Register from "./Register";
 import Chart from "./Chart";
+import Expense  from "./Expense";
 
 function App() {
   return (
     <>
       <Routes>
+      <Route path="expense" element={<Expense />} />
       <Route path="chart" element={<Chart />} />
         <Route path="tag" element={<Tag />} />
         <Route path="register" element={<Register />} />
