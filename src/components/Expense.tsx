@@ -12,16 +12,21 @@ import {
 } from "@mui/material";
 import { gql, useMutation, useQuery } from "@apollo/client";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-
 import { DtPicker } from "react-calendar-datetime-picker";
 import "react-calendar-datetime-picker/dist/style.css";
-
 import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import L from "leaflet";
-import { Icon } from "leaflet";
+import { Map as LeafletMap } from "leaflet";
 import AddLocationIcon from "@mui/icons-material/AddLocation";
 import Layout from "./Layout";
+
+declare module 'react-leaflet' {
+  interface MapContainerProps {
+    center: number[];
+    zoom: number;
+  }
+}
+
 type DataTag = {
   _id: number;
   color: string;
@@ -172,14 +177,11 @@ export default function Expense() {
           >
             <MapContainer
               ref={mapRef}
-              zoom={10}
+              center={[35.7575, 51.41]}
+              zoom={15}
               style={{ width: "100%", height: "100%" }}
             >
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-
+              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
               <AddLocationIcon
                 sx={{
                   color: "blue",
