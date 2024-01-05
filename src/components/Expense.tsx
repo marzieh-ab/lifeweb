@@ -20,7 +20,7 @@ import { Map as LeafletMap } from "leaflet";
 import AddLocationIcon from "@mui/icons-material/AddLocation";
 import Layout from "./Layout";
 
-declare module 'react-leaflet' {
+declare module "react-leaflet" {
   interface MapContainerProps {
     center: number[];
     zoom: number;
@@ -136,7 +136,11 @@ export default function Expense() {
               value={amount}
               onChange={(e: any) => setAmount(e.target.value)}
             />
-            <Box>
+            <Box
+              sx={{
+                position: "relative",
+              }}
+            >
               <DtPicker
                 onChange={setDate}
                 showWeekend
@@ -144,7 +148,15 @@ export default function Expense() {
                 local="fa"
               />
 
-              <CalendarMonthIcon sx={{ color: "gray" }} />
+              <CalendarMonthIcon
+                sx={{
+                  color: "gray",
+                  position: "absolute",
+                  top: "10px",
+                  left: "5px",
+                  zIndex: 401,
+                }}
+              />
             </Box>
 
             <div>
@@ -188,7 +200,7 @@ export default function Expense() {
                   fontSize: "40px",
                   top: "calc(50% - 24px)",
                   left: "calc(50% - 24px)",
-                  zIndex: "1000",
+                  zIndex: 401,
                   position: "absolute",
                 }}
               />

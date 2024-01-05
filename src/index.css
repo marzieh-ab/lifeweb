@@ -32,7 +32,7 @@ a {
 }
 
 .react-calendar-datetime-picker {
-  z-index: 99999 !important;
+  z-index: 402;   /*400px is belonged to leaflet map*/
 }
 
 .react-calendar-datetime-picker .input-picker .input-picker--input {
@@ -41,4 +41,10 @@ a {
 
 Link {
   padding: 6px 16px !important;
+}
+
+
+.input-picker--input {
+  font-family: inherit !important;
+  padding: 24px !important;
 }
